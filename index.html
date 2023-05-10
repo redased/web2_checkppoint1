@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>
+<script>
+  //first task
+  let sentence = prompt("Enter a sentence ending with a period:");
+
+  let countWord = 0;
+  let countVoyel = 0;
+  let i = 0,
+    j = 0,
+    k = 0;
+
+  let n = sentence.length;
+
+  while (i < n && sentence[i] != ".") {
+    if (sentence[i] != " ") {
+      if (
+        sentence[i] == "a" ||
+        sentence[i] == "e" ||
+        sentence[i] == "i" ||
+        sentence[i] == "o" ||
+        sentence[i] == "u"
+      ) {
+        countVoyel++;
+        i++;
+      } else {
+        i++;
+      }
+    } else {
+      countWord++;
+      i++;
+    }
+  }
+  countWord++;
+  console.log("the number of words is " + countWord);
+  console.log("the number of voyels is " + countVoyel);
+
+  //second task
+
+  let table1 = [3, 1, 7, 9];
+  let table2 = [2, 4, 1, 9, 3];
+
+  let t1 = table1.length;
+  let t2 = table2.length;
+  let sum = 0;
+
+  for (let i = 0; i < t1; i++) {
+    let add = true;
+    for (let j = 0; j < t2; j++) {
+      if (table1[i] == table2[j]) {
+        add = false;
+      }
+    }
+    if (add == true) {
+      sum = sum + table1[i];
+    }
+  }
+
+  for (let i = 0; i < t1; i++) {
+    let add = true;
+    for (let j = 0; j < t2; j++) {
+      if (table2[i] == table1[j]) {
+        add = false;
+      }
+    }
+    if (add == true) {
+      sum = sum + table2[i];
+    }
+  }
+
+  console.log(sum);
+</script>
